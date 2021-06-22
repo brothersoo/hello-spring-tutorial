@@ -1,5 +1,6 @@
 package Brothersoo.hellospringtutorial.aop;
 
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ public class TimeTraceAop {
 
   private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+  @Around("execution(* Brothersoo.hellospringtutorial..*(..))")
   public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
 
     long start = System.currentTimeMillis();
