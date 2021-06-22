@@ -3,9 +3,9 @@ package Brothersoo.hellospringtutorial.repository;
 import Brothersoo.hellospringtutorial.domain.Member;
 
 import java.util.*;
-import org.springframework.stereotype.Repository;
+//import org.springframework.stereotype.Repository;
 
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private Map<Long, Member> store = new HashMap<>();

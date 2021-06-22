@@ -5,9 +5,9 @@ import Brothersoo.hellospringtutorial.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
