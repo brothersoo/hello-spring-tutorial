@@ -1,14 +1,10 @@
-package Brothersoo.service;
+package Brothersoo.hellospringtutorial.service;
 
 import Brothersoo.hellospringtutorial.domain.Member;
-import Brothersoo.hellospringtutorial.repository.MemberRepository;
 import Brothersoo.hellospringtutorial.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;

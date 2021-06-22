@@ -1,12 +1,13 @@
-package Brothersoo.service;
+package Brothersoo.hellospringtutorial.service;
 
 import Brothersoo.hellospringtutorial.domain.Member;
 import Brothersoo.hellospringtutorial.repository.MemberRepository;
-import Brothersoo.hellospringtutorial.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
@@ -27,9 +28,9 @@ public class MemberService {
     private void validateDuplicateName(Member member) {
 
         memberRepository.findByName(member.getName())
-                .ifPresent(m -> {
-                    throw new IllegalStateException("이미 존재하는 회원입니다.");
-                });
+            .ifPresent(m -> {
+                throw new IllegalStateException("이미 존재하는 회원입니다.");
+            });
     }
 
     /**
