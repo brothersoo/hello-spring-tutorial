@@ -5,6 +5,8 @@ import Brothersoo.hellospringtutorial.repository.MemberRepository;
 import Brothersoo.hellospringtutorial.repository.MemoryMemberRepository;
 import Brothersoo.hellospringtutorial.service.MemberService;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MemberController {
+
+  private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
   /**
    * Constructor Injection
@@ -56,7 +60,12 @@ public class MemberController {
 
     Member member = new Member();
     member.setName(form.getName());
-    memberService.join(member);
+    try {
+      memberService.join(member);
+    } catch (Exception e) {
+      logger.error(e.getMessage());
+      return "redirect:/";
+    }
 
     return "redirect:/";
   }
